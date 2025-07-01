@@ -88,7 +88,7 @@ abstract base class Repository<T> {
   ///   error: (failure) => print('Parsing error: ${failure.message}'),
   /// );
   /// ```
-  Result<T, Failure> guard(T Function() operation) {
+  Result<T, Failure> guard<T>(T Function() operation) {
     try {
       final result = operation();
       return Success(result);
