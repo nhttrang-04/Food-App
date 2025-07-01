@@ -14,9 +14,6 @@ Dio dio(Ref ref) {
         refreshTokenEndpoint: 'refreshToken',
         accessTokenKey: 'accessToken',
       ),
-      ExceptionHandlerInterceptor(
-        onUnAuthorizedError: () {},
-      ),
       if (kDebugMode)
         PrettyDioLogger(
           requestHeader: true,

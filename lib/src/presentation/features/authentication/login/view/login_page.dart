@@ -39,12 +39,14 @@ class _LoginPageState extends ConsumerState<LoginPage> {
       if (next.isSuccess) {
         notifier.saveRememberMe(shouldRemember.value);
         context.pushReplacementNamed(Routes.home);
-      } else if (next.isError) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(next.error.toString())),
-        );
       } else {
         shouldRemember.value = next.rememberMe;
+      }
+
+      if (next.isError) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(next.error!)),
+        );
       }
     });
   }

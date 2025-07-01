@@ -1,3 +1,5 @@
+import 'package:flutter_template/src/core/base/result.dart';
+
 import '../entities/login_entity.dart';
 import '../entities/sign_up_entity.dart';
 import '../repositories/authentication_repository.dart';
@@ -17,8 +19,16 @@ final class LoginUseCase {
 
   final AuthenticationRepository repository;
 
-  Future<void> call(LoginRequestEntity request) async {
-    await repository.login(request);
+  Future<Result<LoginResponseEntity, String>> call(
+    LoginRequestEntity request,
+  ) async {
+    final result = await repository.login(request);
+
+    return switch (result) {
+      Success(:final data) => Success(data),
+      Error(:final error) => Error(error.message),
+      _ => const Error('Something went wrong'),
+    };
   }
 }
 

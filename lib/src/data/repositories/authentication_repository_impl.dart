@@ -1,3 +1,5 @@
+import 'package:flutter_template/src/core/base/failure.dart';
+import 'package:flutter_template/src/core/base/result.dart';
 import 'package:flutter_template/src/data/services/cache/cache_service.dart';
 
 import '../../domain/entities/login_entity.dart';
@@ -22,8 +24,10 @@ final class AuthenticationRepositoryImpl extends AuthenticationRepository {
   }
 
   @override
-  Future<LoginResponseEntity> login(LoginRequestEntity data) async {
-    return await request(() async {
+  Future<Result<LoginResponseEntity, Failure>> login(
+    LoginRequestEntity data,
+  ) async {
+    return await asyncGuard(() async {
       final model = LoginRequestModel.fromEntity(data);
       final response = await remote.login(model);
 
