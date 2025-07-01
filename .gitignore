@@ -13,6 +13,10 @@
 .history
 .svn/
 .fvm/
+*.freezed.dart
+*.g.dart
+*.mapper.dart
+*.gen.dart
 
 # IntelliJ related
 *.iml
