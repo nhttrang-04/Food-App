@@ -2,7 +2,6 @@ import 'package:flutter_template/src/core/base/result.dart';
 import 'package:flutter_template/src/core/di/dependency_injection.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../../../../../domain/entities/login_entity.dart';
 import '../../../../../domain/use_cases/authentication_use_cases.dart';
 import 'login_state.dart';
 
@@ -43,13 +42,11 @@ class Login extends _$Login {
   }) async {
     state = state.copyWith(type: Status.loading);
 
-    LoginRequestEntity request = LoginRequestEntity(
-      username: email,
+    final result = await _loginUseCase.call(
+      email: email,
       password: password,
-      shouldRemeber: shouldRemember,
+      shouldRemember: shouldRemember,
     );
-
-    final result = await _loginUseCase.call(request);
 
     state = switch (result) {
       Success() => state.copyWith(type: Status.success),

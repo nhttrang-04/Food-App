@@ -19,9 +19,17 @@ final class LoginUseCase {
 
   final AuthenticationRepository repository;
 
-  Future<Result<LoginResponseEntity, String>> call(
-    LoginRequestEntity request,
-  ) async {
+  Future<Result<LoginResponseEntity, String>> call({
+    required String email,
+    required String password,
+    bool? shouldRemember,
+  }) async {
+    final request = LoginRequestEntity(
+      username: email,
+      password: password,
+      shouldRemeber: shouldRemember,
+    );
+
     final result = await repository.login(request);
 
     return switch (result) {

@@ -51,6 +51,16 @@ class _LoginPageState extends ConsumerState<LoginPage> {
     });
   }
 
+  void _onLogin() {
+    if (_formKey.currentState!.validate()) {
+      ref.read(loginProvider.notifier).login(
+            email: emailController.text,
+            password: passwordController.text,
+            shouldRemember: shouldRemember.value,
+          );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final state = ref.watch(loginProvider);
@@ -79,17 +89,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                   ),
                   const SizedBox(height: 32),
                   FilledButton(
-                    onPressed: state.isLoading
-                        ? null
-                        : () {
-                            if (_formKey.currentState!.validate()) {
-                              ref.read(loginProvider.notifier).login(
-                                    email: emailController.text,
-                                    password: passwordController.text,
-                                    shouldRemember: shouldRemember.value,
-                                  );
-                            }
-                          },
+                    onPressed: state.isLoading ? null : _onLogin,
                     child: state.isLoading
                         ? const LoadingIndicator()
                         : const Text('Login'),
