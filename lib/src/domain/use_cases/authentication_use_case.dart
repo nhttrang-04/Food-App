@@ -1,5 +1,4 @@
-import 'package:flutter_template/src/core/base/result.dart';
-
+import '../../core/base/result.dart';
 import '../entities/login_entity.dart';
 import '../entities/sign_up_entity.dart';
 import '../repositories/authentication_repository.dart';

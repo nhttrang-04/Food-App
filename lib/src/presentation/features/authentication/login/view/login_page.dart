@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_template/src/core/extensions/validation.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../../core/extensions/app_localization.dart';
+import '../../../../../core/extensions/validation.dart';
 import '../../../../../core/utiliity/validation/validation.dart';
 import '../../../../core/router/routes.dart';
 import '../../../../core/theme/theme.dart';

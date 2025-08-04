@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_template/src/core/extensions/app_localization.dart';
 
+import '../../extensions/app_localization.dart';
 import 'validation.dart';
 
 class RequiredValidation<T> extends Validation<T> {

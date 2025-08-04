@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_template/src/core/extensions/app_localization.dart';
 import 'package:intl/intl.dart';
 
+import '../../extensions/app_localization.dart';
 import 'validation.dart';
 
 class PasswordValidation extends Validation<String> {

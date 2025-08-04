@@ -1,7 +1,6 @@
-import 'package:flutter_template/src/core/base/failure.dart';
-import 'package:flutter_template/src/core/base/result.dart';
-
+import '../../core/base/failure.dart';
 import '../../core/base/repository.dart';
+import '../../core/base/result.dart';
 import '../entities/login_entity.dart';
 import '../entities/sign_up_entity.dart';
 

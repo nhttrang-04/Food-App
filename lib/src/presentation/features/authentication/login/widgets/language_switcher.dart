@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_template/src/presentation/core/theme/theme.dart';
 
 import '../../../../../core/extensions/app_localization.dart';
 import '../../../../../core/gen/l10n/app_localizations.dart';
 import '../../../../core/application_state/localization_provider/localization_provider.dart';
+import '../../../../core/theme/theme.dart';
 
 class LanguageSwitcherWidget extends ConsumerWidget {
   const LanguageSwitcherWidget({super.key});

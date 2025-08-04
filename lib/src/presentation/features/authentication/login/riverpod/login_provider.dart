@@ -1,7 +1,7 @@
-import 'package:flutter_template/src/core/base/result.dart';
-import 'package:flutter_template/src/core/di/dependency_injection.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
+import '../../../../../core/base/result.dart';
+import '../../../../../core/di/dependency_injection.dart';
 import '../../../../../domain/use_cases/authentication_use_case.dart';
 import 'login_state.dart';
 
