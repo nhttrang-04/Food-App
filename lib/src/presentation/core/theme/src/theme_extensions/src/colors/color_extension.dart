@@ -173,8 +173,8 @@ class LightColorExtension extends ThemeExtension<LightColorExtension>
       disabled: Color.lerp(disabled, other.disabled, t)!,
       active: Color.lerp(active, other.active, t)!,
       inactive: Color.lerp(inactive, other.inactive, t)!,
-      // Complex objects are harder to lerp, so we'll just use whichever is appropriate
-      // based on animation progress
+      // Complex objects are harder to lerp, so we'll just use whichever is
+      // appropriate based on animation progress
       appBar: t < 0.5 ? appBar : other.appBar,
       bottomNavBar: t < 0.5 ? bottomNavBar : other.bottomNavBar,
       pageView: t < 0.5 ? pageView : other.pageView,
@@ -316,8 +316,8 @@ class DarkColorExtension extends ThemeExtension<DarkColorExtension>
       info: Color.lerp(info, other.info, t)!,
       disabled: Color.lerp(disabled, other.disabled, t)!,
       active: Color.lerp(active, other.active, t)!,
-      // Complex objects are harder to lerp, so we'll just use whichever is appropriate
-      // based on animation progress
+      // Complex objects are harder to lerp, so we'll just use whichever is
+      // appropriate based on animation progress
       appBar: t < 0.5 ? appBar : other.appBar,
       bottomNavBar: t < 0.5 ? bottomNavBar : other.bottomNavBar,
       pageView: t < 0.5 ? pageView : other.pageView,

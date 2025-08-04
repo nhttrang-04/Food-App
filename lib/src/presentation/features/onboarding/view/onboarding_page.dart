@@ -47,33 +47,34 @@ class _OnboardingPageState extends ConsumerState<OnboardingPage>
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.7,
                   child: PageView(
-                      controller: _pageController,
-                      onPageChanged: (int page) {
-                        setState(() => _currentPage = page);
-                      },
-                      children: _getOnboardingItems(context).map((item) {
-                        return Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 24),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                item.title,
-                                textAlign: TextAlign.center,
-                                style: context.textStyle.headlineSmall.medium,
-                              ),
-                              const SizedBox(height: 24),
-                              item.image,
-                              const SizedBox(height: 24),
-                              Column(
-                                children: item.features.map((feature) {
-                                  return _OnboardingListItem(title: feature);
-                                }).toList(),
-                              ),
-                            ],
-                          ),
-                        );
-                      }).toList()),
+                    controller: _pageController,
+                    onPageChanged: (int page) {
+                      setState(() => _currentPage = page);
+                    },
+                    children: _getOnboardingItems(context).map((item) {
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 24),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              item.title,
+                              textAlign: TextAlign.center,
+                              style: context.textStyle.headlineSmall.medium,
+                            ),
+                            const SizedBox(height: 24),
+                            item.image,
+                            const SizedBox(height: 24),
+                            Column(
+                              children: item.features.map((feature) {
+                                return _OnboardingListItem(title: feature);
+                              }).toList(),
+                            ),
+                          ],
+                        ),
+                      );
+                    }).toList(),
+                  ),
                 ),
                 const SizedBox(height: 24),
                 Row(
@@ -81,11 +82,13 @@ class _OnboardingPageState extends ConsumerState<OnboardingPage>
                   children: _getOnboardingItems(context).map((item) {
                     return Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 4),
-                      child: Icon(Icons.circle,
-                          size: 8,
-                          color: _currentPage == item.index
-                              ? context.color.pageView.active
-                              : context.color.pageView.inactive),
+                      child: Icon(
+                        Icons.circle,
+                        size: 8,
+                        color: _currentPage == item.index
+                            ? context.color.pageView.active
+                            : context.color.pageView.inactive,
+                      ),
                     );
                   }).toList(),
                 ),

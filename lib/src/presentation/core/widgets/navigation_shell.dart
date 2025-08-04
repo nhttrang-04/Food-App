@@ -20,7 +20,7 @@ class _NavigationShellState extends State<NavigationShell> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Flutter Template"),
+        title: const Text('Flutter Template'),
       ),
       body: widget.statefulNavigationShell,
       bottomNavigationBar: BottomNavigationBar(

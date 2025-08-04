@@ -1,5 +1,5 @@
 class Endpoints {
-  static const base = "https://dummyjson.com";
+  static const base = 'https://dummyjson.com';
 
   /// Authentication
   static const String register = '/auth/register/';

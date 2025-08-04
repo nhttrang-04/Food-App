@@ -25,8 +25,8 @@ class PasswordValidation extends Validation<String> {
 
     if (value.length < minLength) {
       final localizedNumber = NumberFormat.decimalPattern(
-              Localizations.localeOf(context).languageCode)
-          .format(minLength);
+        Localizations.localeOf(context).languageCode,
+      ).format(minLength);
 
       return context.locale.passwordMinLengthValidation(localizedNumber);
     }

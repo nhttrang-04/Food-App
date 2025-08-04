@@ -26,7 +26,7 @@ final class AuthenticationRepositoryImpl extends AuthenticationRepository {
   Future<Result<LoginResponseEntity, Failure>> login(
     LoginRequestEntity data,
   ) async {
-    return await asyncGuard(() async {
+    return asyncGuard(() async {
       final model = LoginRequestModel.fromEntity(data);
       final response = await remote.login(model);
 

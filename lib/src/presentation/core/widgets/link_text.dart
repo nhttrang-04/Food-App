@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
+
 import '../theme/theme.dart';
 
 class LinkText extends StatelessWidget {
-  final VoidCallback? onTap;
-  final String text;
-  final String linkText;
-
   const LinkText({
     super.key,
     required this.text,
     required this.linkText,
     required this.onTap,
   });
+
+  final VoidCallback? onTap;
+  final String text;
+  final String linkText;
 
   @override
   Widget build(BuildContext context) {

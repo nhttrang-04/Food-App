@@ -1,9 +1,4 @@
 base class ResponseModel {
-  final bool success;
-  final String? message;
-  final ErrorModel? error;
-  final Object? data;
-
   ResponseModel({
     required this.success,
     this.message,
@@ -19,13 +14,13 @@ base class ResponseModel {
       data: json['data'],
     );
   }
+  final bool success;
+  final String? message;
+  final ErrorModel? error;
+  final Object? data;
 }
 
 base class ErrorModel {
-  final String message;
-  final String? code;
-  final String? stack;
-
   ErrorModel({
     required this.message,
     required this.code,
@@ -39,4 +34,7 @@ base class ErrorModel {
       stack: json['stack'],
     );
   }
+  final String message;
+  final String? code;
+  final String? stack;
 }

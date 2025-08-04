@@ -1,9 +1,6 @@
 import 'package:logger/logger.dart';
 
 class Log {
-  late Logger _logger;
-  static const lineLength = 80;
-
   Log._internal() {
     _logger = Logger(
       printer: PrettyPrinter(
@@ -23,6 +20,9 @@ class Log {
   }
 
   static final Log _singleton = Log._internal();
+
+  late Logger _logger;
+  static const lineLength = 80;
 
   static void fatal({
     required Object error,
