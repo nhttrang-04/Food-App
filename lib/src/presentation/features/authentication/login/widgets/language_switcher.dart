@@ -18,10 +18,7 @@ class LanguageSwitcherWidget extends ConsumerWidget {
       icon: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(
-            Icons.language,
-            color: context.color.primary,
-          ),
+          Icon(Icons.language, color: context.color.primary),
           const SizedBox(width: 4),
           Text(
             context.locale.getLanguageName(state.languageCode),

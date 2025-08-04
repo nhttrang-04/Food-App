@@ -10,10 +10,7 @@ part 'logout_state.mapper.dart';
   generateMethods: GenerateMethods.copy | GenerateMethods.stringify,
 )
 class LogoutState with LogoutStateMappable {
-  const LogoutState({
-    this.type = Status.initial,
-    this.error,
-  });
+  const LogoutState({this.type = Status.initial, this.error});
 
   final Status type;
   final String? error;

@@ -10,14 +10,9 @@ class _FilledButtonLightThemeData with ThemeExtensions {
         padding: WidgetStateProperty.all(
           const EdgeInsets.symmetric(horizontal: 24),
         ),
-        minimumSize: WidgetStateProperty.all(
-          const Size(double.infinity, 48),
-        ),
+        minimumSize: WidgetStateProperty.all(const Size(double.infinity, 48)),
         textStyle: WidgetStateProperty.all(
-          const TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.w600,
-          ),
+          const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
         ),
       ),
     );
@@ -35,14 +30,9 @@ class _ElevatedButtonLightThemeData with ThemeExtensions {
         padding: WidgetStateProperty.all(
           const EdgeInsets.symmetric(horizontal: 24),
         ),
-        minimumSize: WidgetStateProperty.all(
-          const Size(double.infinity, 48),
-        ),
+        minimumSize: WidgetStateProperty.all(const Size(double.infinity, 48)),
         textStyle: WidgetStateProperty.all(
-          const TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.w600,
-          ),
+          const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
         ),
       ),
     );
@@ -72,14 +62,9 @@ class _FilledButtonDarkThemeData with ThemeExtensions {
         padding: WidgetStateProperty.all(
           const EdgeInsets.symmetric(horizontal: 24),
         ),
-        minimumSize: WidgetStateProperty.all(
-          const Size(double.infinity, 48),
-        ),
+        minimumSize: WidgetStateProperty.all(const Size(double.infinity, 48)),
         textStyle: WidgetStateProperty.all(
-          const TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.w600,
-          ),
+          const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
         ),
       ),
     );
@@ -97,14 +82,9 @@ class _ElevatedButtonDarkThemeData with ThemeExtensions {
         padding: WidgetStateProperty.all(
           const EdgeInsets.symmetric(horizontal: 24),
         ),
-        minimumSize: WidgetStateProperty.all(
-          const Size(double.infinity, 48),
-        ),
+        minimumSize: WidgetStateProperty.all(const Size(double.infinity, 48)),
         textStyle: WidgetStateProperty.all(
-          const TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.w600,
-          ),
+          const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
         ),
       ),
     );

@@ -1,9 +1,7 @@
 part of '../view/login_page.dart';
 
 class _FormFooter extends ConsumerWidget {
-  const _FormFooter({
-    required this.shouldRemember,
-  });
+  const _FormFooter({required this.shouldRemember});
 
   final ValueNotifier<bool> shouldRemember;
 

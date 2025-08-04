@@ -4,10 +4,7 @@ import '../../extensions/app_localization.dart';
 import 'validation.dart';
 
 class LengthValidation<T> extends Validation<T> {
-  LengthValidation({
-    required this.min,
-    required this.max,
-  });
+  LengthValidation({required this.min, required this.max});
 
   final int min;
   final int max;

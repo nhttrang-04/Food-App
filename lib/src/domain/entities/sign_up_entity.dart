@@ -15,9 +15,7 @@ class SignUpRequestEntity extends SignUpEntity {
 }
 
 class SignUpResponseEntity extends SignUpEntity {
-  SignUpResponseEntity({
-    required this.accessToken,
-  });
+  SignUpResponseEntity({required this.accessToken});
 
   final String accessToken;
 }

@@ -112,9 +112,7 @@ class _OnboardingPageState extends ConsumerState<OnboardingPage>
 }
 
 class _OnboardingListItem extends StatelessWidget {
-  const _OnboardingListItem({
-    required this.title,
-  });
+  const _OnboardingListItem({required this.title});
 
   final String title;
 
@@ -126,11 +124,7 @@ class _OnboardingListItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Icon(
-            Icons.circle,
-            size: 6,
-            color: context.color.text.tertiary,
-          ),
+          Icon(Icons.circle, size: 6, color: context.color.text.tertiary),
           const SizedBox(width: 8),
           Expanded(
             child: Baseline(

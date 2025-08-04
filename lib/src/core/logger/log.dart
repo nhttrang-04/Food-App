@@ -24,15 +24,8 @@ class Log {
   late Logger _logger;
   static const lineLength = 80;
 
-  static void fatal({
-    required Object error,
-    required StackTrace stackTrace,
-  }) =>
-      _singleton._logger.f(
-        'Fatal',
-        error: error,
-        stackTrace: stackTrace,
-      );
+  static void fatal({required Object error, required StackTrace stackTrace}) =>
+      _singleton._logger.f('Fatal', error: error, stackTrace: stackTrace);
 
   static void debug(String message) => _singleton._logger.d(message);
 

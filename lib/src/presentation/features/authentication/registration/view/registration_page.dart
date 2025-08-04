@@ -26,9 +26,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
             const FlutterLogo(size: 100),
             const SizedBox(height: 80),
             TextFormField(
-              decoration: InputDecoration(
-                hintText: context.locale.firstName,
-              ),
+              decoration: InputDecoration(hintText: context.locale.firstName),
             ),
             const SizedBox(height: 16),
             TextFormField(

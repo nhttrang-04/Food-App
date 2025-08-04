@@ -32,10 +32,7 @@ class LoginResponseModel extends LoginResponseEntity
 @MappableClass(generateMethods: GenerateMethods.copy | GenerateMethods.encode)
 class LoginRequestModel extends LoginRequestEntity
     with LoginRequestModelMappable {
-  LoginRequestModel({
-    required super.username,
-    required super.password,
-  });
+  LoginRequestModel({required super.username, required super.password});
 
   factory LoginRequestModel.fromEntity(LoginRequestEntity entity) {
     return LoginRequestModel(

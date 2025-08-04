@@ -18,9 +18,7 @@ class AppStartupErrorWidget extends StatelessWidget {
           onPressed: onRetry,
           child: const Icon(Icons.refresh),
         ),
-        body: Center(
-          child: Text(errorMessage),
-        ),
+        body: Center(child: Text(errorMessage)),
       ),
     );
   }

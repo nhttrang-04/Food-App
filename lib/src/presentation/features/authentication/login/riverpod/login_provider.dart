@@ -50,10 +50,7 @@ class Login extends _$Login {
 
     state = switch (result) {
       Success() => state.copyWith(type: Status.success),
-      Error(:final error) => state.copyWith(
-          type: Status.error,
-          error: error,
-        ),
+      Error(:final error) => state.copyWith(type: Status.error, error: error),
       _ => state.copyWith(type: Status.error),
     };
   }

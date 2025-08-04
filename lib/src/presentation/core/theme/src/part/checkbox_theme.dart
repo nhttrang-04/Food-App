@@ -5,9 +5,7 @@ class _CheckboxTheme with ThemeExtensions {
     return CheckboxThemeData(
       side: BorderSide(width: 1.25, color: lightColor.border),
       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(4),
-      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
       fillColor: WidgetStateProperty.resolveWith((states) {
         if (states.contains(WidgetState.selected)) {
           return lightColor.primary;

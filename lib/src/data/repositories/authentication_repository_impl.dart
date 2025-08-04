@@ -8,10 +8,7 @@ import '../services/cache/cache_service.dart';
 import '../services/network/rest_client.dart';
 
 final class AuthenticationRepositoryImpl extends AuthenticationRepository {
-  AuthenticationRepositoryImpl({
-    required this.remote,
-    required this.local,
-  });
+  AuthenticationRepositoryImpl({required this.remote, required this.local});
 
   final RestClient remote;
   final CacheService local;

@@ -48,9 +48,9 @@ class _LoginPageState extends ConsumerState<LoginPage> {
       }
 
       if (next.isError) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(next.error!)),
-        );
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text(next.error!)));
       }
     });
   }
@@ -64,7 +64,9 @@ class _LoginPageState extends ConsumerState<LoginPage> {
 
   void _onLogin() {
     if (_formKey.currentState!.validate()) {
-      ref.read(loginProvider.notifier).login(
+      ref
+          .read(loginProvider.notifier)
+          .login(
             email: emailController.text,
             password: passwordController.text,
             shouldRemember: shouldRemember.value,

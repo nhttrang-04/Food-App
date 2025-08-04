@@ -96,7 +96,8 @@ class TokenManager extends Interceptor {
     if (refreshResp.statusCode != 200) {
       throw DioException(
         requestOptions: RequestOptions(),
-        error: 'Refresh token request failed with status: '
+        error:
+            'Refresh token request failed with status: '
             '${refreshResp.statusCode}',
       );
     }

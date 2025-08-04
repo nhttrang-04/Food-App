@@ -8,12 +8,7 @@ import 'src/presentation/core/router/router.dart';
 import 'src/presentation/core/theme/theme.dart';
 
 void main() {
-  runApp(
-    ProviderScope(
-      observers: [RiverpodObserver()],
-      child: const MyApp(),
-    ),
-  );
+  runApp(ProviderScope(observers: [RiverpodObserver()], child: const MyApp()));
 }
 
 class MyApp extends ConsumerWidget {

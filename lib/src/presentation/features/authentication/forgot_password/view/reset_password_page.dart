@@ -41,9 +41,7 @@ class ResetPasswordPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 TextFormField(
-                  decoration: InputDecoration(
-                    hintText: context.locale.email,
-                  ),
+                  decoration: InputDecoration(hintText: context.locale.email),
                 ),
                 const SizedBox(height: 16),
                 FilledButton(

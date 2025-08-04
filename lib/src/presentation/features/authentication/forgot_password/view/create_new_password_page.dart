@@ -76,9 +76,7 @@ class _FormState extends State<_Form> {
                   _isObscure = !_isObscure;
                 });
               },
-              child: Icon(
-                _isObscure ? Icons.visibility : Icons.visibility_off,
-              ),
+              child: Icon(_isObscure ? Icons.visibility : Icons.visibility_off),
             ),
           ),
         ),
@@ -92,9 +90,7 @@ class _FormState extends State<_Form> {
                   _isObscure = !_isObscure;
                 });
               },
-              child: Icon(
-                _isObscure ? Icons.visibility : Icons.visibility_off,
-              ),
+              child: Icon(_isObscure ? Icons.visibility : Icons.visibility_off),
             ),
           ),
         ),

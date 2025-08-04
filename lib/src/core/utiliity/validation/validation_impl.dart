@@ -7,9 +7,7 @@ class Validator {
 
   final BuildContext context;
 
-  FormFieldValidator<T> apply<T>(
-    List<Validation<T>> validations,
-  ) {
+  FormFieldValidator<T> apply<T>(List<Validation<T>> validations) {
     return (T? value) {
       for (Validation validation in validations) {
         final error = validation.validate(context, value);

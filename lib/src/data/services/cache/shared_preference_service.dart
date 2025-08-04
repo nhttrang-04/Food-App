@@ -32,7 +32,7 @@ class SharedPreferencesService implements CacheService {
       const (int) => prefs.getInt(key.name) as T?,
       const (bool) => prefs.getBool(key.name) as T?,
       const (double) => prefs.getDouble(key.name) as T?,
-      _ => prefs.get(key.name) as T?
+      _ => prefs.get(key.name) as T?,
     };
   }
 
