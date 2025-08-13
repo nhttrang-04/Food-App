@@ -22,8 +22,8 @@ A comprehensive, scalable foundation for building maintainable Flutter applicati
 
 ### Prerequisites
 
-- **Flutter SDK**: >=3.29.0
-- **Dart SDK**: >=3.4.0  
+- **Flutter SDK**: >=3.32.8
+- **Dart SDK**: >=3.8.0  
 - **Android Studio** or **VS Code** with Flutter extensions
 - **Git** for version control
 
@@ -76,6 +76,11 @@ lib/src/
 - **Base Classes**: Common interfaces and abstract classes
 - **Extensions**: Utility extensions for enhanced functionality
 - **Logging**: Centralized logging configuration
+- **Localization**:
+   * Multi-language support (English, Bangla, Arabic)
+   * Runtime language switching with persisted preferences
+   * Localized validation and error messages
+- **Validation Contracts**: Centralized validators for form fields (email, password, required fields, length constraints) — fully localized
 
 #### Domain Layer
 - **Entities**: Core business objects (User, Login, SignUp)
@@ -93,6 +98,15 @@ lib/src/
 - **Routing**: go_router configuration with nested routes
 - **State Management**: Riverpod providers and notifiers
 - **Theming**: Comprehensive theme system with extensions
+- **Color System**:
+   - `primitive.dart` for base color values
+   - integrates Figma semantic tokens into `ThemeExtension`
+
+
+#### Development Tooling
+*  Custom Linter — flutter_guardian
+*  A standalone custom linter package to enforce naming conventions and structure for dependency injection layers
+*  Validates naming for repositories, services, and use cases
 
 ## Project Structure
 
@@ -139,12 +153,12 @@ flutter_template/
 ## Technology Stack
 
 ### Core Technologies
-| Technology | Version | Purpose |
-|------------|---------|---------|
-| **Flutter** | >=3.29.0 | UI framework |
-| **Dart** | >=3.4.0 | Programming language |
-| **Riverpod** | ^2.5.1 | State management & DI |
-| **go_router** | ^14.2.8 | Navigation and routing |
+| Technology | Version  | Purpose |
+|------------|----------|---------|
+| **Flutter** | >=3.32.8 | UI framework |
+| **Dart** | >=3.8.0  | Programming language |
+| **Riverpod** | ^2.5.1   | State management & DI |
+| **go_router** | ^14.2.8  | Navigation and routing |
 
 ### Network & Data
 | Technology | Version | Purpose |
@@ -249,7 +263,7 @@ UserRepository userRepository(UserRepositoryRef ref) {
 class UserState extends _$UserState {
   @override
   User? build() => null;
-  
+
   void setUser(User user) => state = user;
 }
 ```
