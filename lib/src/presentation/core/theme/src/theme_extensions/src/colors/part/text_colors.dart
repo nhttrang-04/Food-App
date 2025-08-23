@@ -15,7 +15,7 @@ class _LightTextColors extends TextColors {
   Color get primary => _Primitive.neutral50;
 
   @override
-  Color get secondary => _Primitive.neutral20;
+  Color get secondary => _Primitive.neutral40;
 
   @override
   Color get tertiary => _Primitive.neutral20;
