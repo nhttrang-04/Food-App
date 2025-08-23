@@ -5,44 +5,86 @@ import 'src/theme_extensions/extensions.dart';
 
 export 'src/theme_data.dart';
 
-extension ThemeHelpers on BuildContext {
-  ThemeData get lightTheme => $LightThemeData()();
-
-  ThemeData get darkTheme => $DarkThemeData()();
-
+/// Extension on [BuildContext] to provide convenient access to theme-related
+/// properties and utilities.
+///
+/// This extension simplifies theme access by providing direct getters for
+/// commonly used theme elements like colors, text styles, and theme data
+/// for both light and dark modes.
+///
+/// Example usage:
+/// ```dart
+/// Widget build(BuildContext context) {
+///   return Container(
+///     color: context.color.primary,
+///     child: Text(
+///       'Hello World',
+///       style: context.textStyle.bodyLarge,
+///     ),
+///   );
+/// }
+/// ```
+extension BuildContextExtension on BuildContext {
+  /// Internal getter to access the current theme data.
+  ///
+  /// This is a private helper method used internally by other getters
+  /// in this extension to access the theme data from the widget tree.
   ThemeData get _theme => Theme.of(this);
 
-  ColorExtension get color =>
-      _theme.brightness == Brightness.light ? _lightColor : _darkColor;
+  /// Gets the appropriate color extension based on the current theme
+  /// brightness.
+  ///
+  /// Returns [LightColorExtension] for light themes and
+  /// [DarkColorExtension] for dark themes. This provides seamless
+  /// access to theme-appropriate colors throughout the application.
+  ///
+  /// Throws if the theme extension is not found.
+  /// In debug, an assertion explains the missing registration.
+  /// In release, a null-check error will be thrown if not registered.
+  ColorExtension get color {
+    final ext = _theme.brightness == Brightness.light
+        ? _theme.extension<LightColorExtension>()
+        : _theme.extension<DarkColorExtension>();
 
-  LightColorExtension get _lightColor =>
-      _theme.extension<LightColorExtension>()!;
+    assert(
+      ext != null,
+      'Ensure ColorExtension is added to ThemeData.extensions in src/theme_data.dart.',
+    );
 
-  DarkColorExtension get _darkColor => _theme.extension<DarkColorExtension>()!;
+    return ext!;
+  }
 
-  TextStyleExtension get textStyle => _theme.extension<TextStyleExtension>()!;
-}
+  /// Gets the text style extension from the current theme.
+  ///
+  /// Provides access to all custom text styles defined in the theme.
+  /// This includes predefined text styles for different UI elements
+  /// such as headings, body text, captions, etc.
+  ///
+  /// Throws if the text style extension is not found.
+  /// In debug mode, an assertion explains the missing registration.
+  /// In release mode, a null-check error will be thrown if not registered.
+  TextStyleExtension get textStyle {
+    final ext = _theme.extension<TextStyleExtension>();
 
-extension TextStyleExtensions on TextStyle {
-  TextStyle get light => copyWith(fontWeight: FontWeight.w300);
+    assert(
+      ext != null,
+      'Ensure TextStyleExtension is added to ThemeData.extensions in src/theme_data.dart.',
+    );
 
-  TextStyle get regular => copyWith(fontWeight: FontWeight.w400);
+    return ext!;
+  }
 
-  TextStyle get medium => copyWith(fontWeight: FontWeight.w500);
+  /// Gets the light theme data configuration.
+  ///
+  /// Returns a [ThemeData] object configured for light mode appearance.
+  /// This can be used to explicitly apply light theme styling or for
+  /// theme switching functionality.
+  ThemeData get lightTheme => $LightThemeData()();
 
-  TextStyle get semibold => copyWith(fontWeight: FontWeight.w600);
-
-  TextStyle get bold => copyWith(fontWeight: FontWeight.bold);
-
-  TextStyle get italic => copyWith(fontStyle: FontStyle.italic);
-
-  TextStyle get underline => copyWith(decoration: TextDecoration.underline);
-
-  TextStyle get lineThrough => copyWith(decoration: TextDecoration.lineThrough);
-
-  TextStyle get overline => copyWith(decoration: TextDecoration.overline);
-
-  TextStyle withColor(Color color) => copyWith(color: color);
-
-  TextStyle size(double size) => copyWith(fontSize: size);
+  /// Gets the dark theme data configuration.
+  ///
+  /// Returns a [ThemeData] object configured for dark mode appearance.
+  /// This can be used to explicitly apply dark theme styling or for
+  /// theme switching functionality.
+  ThemeData get darkTheme => $DarkThemeData()();
 }
