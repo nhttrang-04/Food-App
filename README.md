@@ -17,6 +17,7 @@ A comprehensive, scalable foundation for building maintainable Flutter applicati
 ![Flutter](https://img.shields.io/badge/Flutter->=3.29.0-blue.svg)
 ![Dart](https://img.shields.io/badge/Dart->=3.4.0-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
+![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/momshaddinury/flutter_template?utm_source=oss&utm_medium=github&utm_campaign=momshaddinury%2Fflutter_template&labelColor=171717&color=FF570A&link=https%3A%2F%2Fcoderabbit.ai&label=CodeRabbit+Reviews)
 
 ## Quick Start
 
