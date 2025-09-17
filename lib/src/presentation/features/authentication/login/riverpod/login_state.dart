@@ -1,30 +1,18 @@
-import 'package:dart_mappable/dart_mappable.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../../core/base/status.dart';
 
 export 'package:flutter_template/src/presentation/core/base/status.dart';
 
-part 'login_state.mapper.dart';
+part 'login_state.freezed.dart';
 
-@MappableClass(
-  generateMethods: GenerateMethods.copy | GenerateMethods.stringify,
-)
-class LoginState<T> with LoginStateMappable<T> {
-  const LoginState({
-    this.rememberMe = false,
-    this.type = Status.initial,
-    this.error,
-  });
+@freezed
+abstract class LoginState<T> with _$LoginState<T> {
+  const factory LoginState({
+    @Default(false) bool rememberMe,
+    @Default(Status.initial) Status status,
+    String? error,
+  }) = _LoginState<T>;
 
-  final bool rememberMe;
-  final Status type;
-  final String? error;
-
-  bool get isInitial => type.isInitial;
-
-  bool get isLoading => type.isLoading;
-
-  bool get isSuccess => type.isSuccess;
-
-  bool get isError => type.isError;
+  const LoginState._();
 }

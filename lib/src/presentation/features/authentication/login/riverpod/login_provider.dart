@@ -40,7 +40,7 @@ class Login extends _$Login {
     required String password,
     bool? shouldRemember,
   }) async {
-    state = state.copyWith(type: Status.loading);
+    state = state.copyWith(status: Status.loading);
 
     final result = await _loginUseCase.call(
       email: email,
@@ -49,9 +49,9 @@ class Login extends _$Login {
     );
 
     state = switch (result) {
-      Success() => state.copyWith(type: Status.success),
-      Error(:final error) => state.copyWith(type: Status.error, error: error),
-      _ => state.copyWith(type: Status.error),
+      Success() => state.copyWith(status: Status.success),
+      Error(:final error) => state.copyWith(status: Status.error, error: error),
+      _ => state.copyWith(status: Status.error),
     };
   }
 }

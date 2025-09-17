@@ -18,6 +18,10 @@ class _LoginForm extends StatefulWidget {
 class _LoginFormState extends State<_LoginForm> {
   bool _isPasswordVisible = false;
 
+  void _togglePasswordVisibility() {
+    setState(() => _isPasswordVisible = !_isPasswordVisible);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -34,11 +38,7 @@ class _LoginFormState extends State<_LoginForm> {
           decoration: InputDecoration(
             hintText: context.locale.password,
             suffixIcon: GestureDetector(
-              onTap: () {
-                setState(() {
-                  _isPasswordVisible = !_isPasswordVisible;
-                });
-              },
+              onTap: _togglePasswordVisibility,
               child: Icon(
                 _isPasswordVisible
                     ? Icons.visibility_outlined

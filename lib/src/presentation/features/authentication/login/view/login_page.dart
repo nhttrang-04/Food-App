@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import '../../../../../core/extensions/app_localization.dart';
 import '../../../../../core/extensions/validation.dart';
 import '../../../../../core/utiliity/validation/validation.dart';
+import '../../../../core/base/status.dart';
 import '../../../../core/router/routes.dart';
 import '../../../../core/theme/theme.dart';
 import '../../../../core/widgets/link_text.dart';
@@ -40,14 +41,14 @@ class _LoginPageState extends ConsumerState<LoginPage> {
     });
 
     ref.listenManual(loginProvider, (previous, next) {
-      if (next.isSuccess) {
+      if (next.status.isSuccess) {
         notifier.saveRememberMe(shouldRemember.value);
         context.pushReplacementNamed(Routes.home);
       } else {
         shouldRemember.value = next.rememberMe;
       }
 
-      if (next.isError) {
+      if (next.status.isError) {
         ScaffoldMessenger.of(
           context,
         ).showSnackBar(SnackBar(content: Text(next.error!)));
@@ -114,8 +115,8 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                         ),
                         const SizedBox(height: 32),
                         FilledButton(
-                          onPressed: state.isLoading ? null : _onLogin,
-                          child: state.isLoading
+                          onPressed: state.status.isLoading ? null : _onLogin,
+                          child: state.status.isLoading
                               ? const LoadingIndicator()
                               : Text(context.locale.login),
                         ),

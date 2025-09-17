@@ -5,6 +5,14 @@ class _FormFooter extends ConsumerWidget {
 
   final ValueNotifier<bool> shouldRemember;
 
+  void _toggleRememberMe(bool? value) {
+    shouldRemember.value = value ?? false;
+  }
+
+  void _navigateToResetPassword(BuildContext context) {
+    context.pushNamed(Routes.resetPassword);
+  }
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return DefaultTextStyle(
@@ -23,12 +31,7 @@ class _FormFooter extends ConsumerWidget {
                 ValueListenableBuilder(
                   valueListenable: shouldRemember,
                   builder: (context, value, _) {
-                    return Checkbox(
-                      value: value,
-                      onChanged: (bool? value) {
-                        shouldRemember.value = value ?? false;
-                      },
-                    );
+                    return Checkbox(value: value, onChanged: _toggleRememberMe);
                   },
                 ),
                 Text(context.locale.rememberMe),
@@ -40,9 +43,7 @@ class _FormFooter extends ConsumerWidget {
             child: Align(
               alignment: Alignment.centerRight,
               child: TextButton(
-                onPressed: () {
-                  context.pushNamed(Routes.resetPassword);
-                },
+                onPressed: () => _navigateToResetPassword(context),
                 child: Text(context.locale.forgotPassword),
               ),
             ),
