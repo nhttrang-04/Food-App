@@ -16,18 +16,18 @@ class $LightThemeData with ThemeExtensions {
       extensions: <ThemeExtension<dynamic>>[lightColor, textStyle],
       colorScheme: ColorScheme.light(primary: lightColor.primary),
       appBarTheme: _AppBarLightTheme()(),
+      scaffoldBackgroundColor: lightColor.scaffoldBackground,
       bottomNavigationBarTheme: _BottomNavigationBarLightThemeData()(),
-      dropdownMenuTheme: _DropdownMenuLightThemeData()(),
       elevatedButtonTheme: _ElevatedButtonLightThemeData()(),
       filledButtonTheme: _FilledButtonLightThemeData()(),
       textButtonTheme: _TextButtonLightThemeData()(),
       iconTheme: IconThemeData(color: lightColor.border),
-      inputDecorationTheme: _InputDecorationLightTheme()(),
       checkboxTheme: _CheckboxTheme()(),
+      inputDecorationTheme: _InputDecorationLightTheme()(),
+      dropdownMenuTheme: _DropdownMenuLightThemeData()(),
       progressIndicatorTheme: ProgressIndicatorThemeData(
         color: lightColor.primary,
       ),
-      scaffoldBackgroundColor: lightColor.scaffoldBackground,
     );
   }
 }
@@ -39,18 +39,18 @@ class $DarkThemeData with ThemeExtensions {
       extensions: <ThemeExtension<dynamic>>[darkColor, textStyle],
       colorScheme: ColorScheme.dark(primary: darkColor.primary),
       appBarTheme: _AppBarDarkTheme()(),
+      scaffoldBackgroundColor: darkColor.scaffoldBackground,
       bottomNavigationBarTheme: _BottomNavigationBarDarkThemeData()(),
-      dropdownMenuTheme: _DropdownMenuDarkThemeData()(),
       elevatedButtonTheme: _ElevatedButtonDarkThemeData()(),
       filledButtonTheme: _FilledButtonDarkThemeData()(),
       textButtonTheme: _TextButtonDarkThemeData()(),
       iconTheme: IconThemeData(color: darkColor.border),
-      inputDecorationTheme: _InputDecorationDarkTheme()(),
       checkboxTheme: _CheckboxTheme()(),
+      inputDecorationTheme: _InputDecorationDarkTheme()(),
+      dropdownMenuTheme: _DropdownMenuDarkThemeData()(),
       progressIndicatorTheme: ProgressIndicatorThemeData(
         color: darkColor.onPrimary,
       ),
-      scaffoldBackgroundColor: darkColor.scaffoldBackground,
     );
   }
 }

@@ -100,6 +100,24 @@ abstract class AppLocalizations {
     Locale('en'),
   ];
 
+  /// No description provided for @english.
+  ///
+  /// In en, this message translates to:
+  /// **'English'**
+  String get english;
+
+  /// No description provided for @bangla.
+  ///
+  /// In en, this message translates to:
+  /// **'বাংলা'**
+  String get bangla;
+
+  /// No description provided for @arabic.
+  ///
+  /// In en, this message translates to:
+  /// **'العربية'**
+  String get arabic;
+
   /// No description provided for @home.
   ///
   /// In en, this message translates to:
@@ -381,24 +399,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Deploy your apps to multiple platforms with ease.'**
   String get buildDeployDescription;
-
-  /// No description provided for @english.
-  ///
-  /// In en, this message translates to:
-  /// **'English'**
-  String get english;
-
-  /// No description provided for @bangla.
-  ///
-  /// In en, this message translates to:
-  /// **'বাংলা'**
-  String get bangla;
-
-  /// No description provided for @arabic.
-  ///
-  /// In en, this message translates to:
-  /// **'العربية'**
-  String get arabic;
 
   /// Error message for password minimum length validation
   ///

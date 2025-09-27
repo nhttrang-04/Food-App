@@ -9,6 +9,15 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
+  String get english => 'English';
+
+  @override
+  String get bangla => 'বাংলা';
+
+  @override
+  String get arabic => 'العربية';
+
+  @override
   String get home => 'Home';
 
   @override
@@ -162,15 +171,6 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get buildDeployDescription =>
       'Deploy your apps to multiple platforms with ease.';
-
-  @override
-  String get english => 'English';
-
-  @override
-  String get bangla => 'বাংলা';
-
-  @override
-  String get arabic => 'العربية';
 
   @override
   String passwordMinLengthValidation(String minLength) {

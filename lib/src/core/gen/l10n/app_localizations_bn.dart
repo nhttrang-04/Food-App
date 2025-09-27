@@ -9,6 +9,15 @@ class AppLocalizationsBn extends AppLocalizations {
   AppLocalizationsBn([String locale = 'bn']) : super(locale);
 
   @override
+  String get english => 'English';
+
+  @override
+  String get bangla => 'বাংলা';
+
+  @override
+  String get arabic => 'العربية';
+
+  @override
   String get home => 'হোম';
 
   @override
@@ -163,15 +172,6 @@ class AppLocalizationsBn extends AppLocalizations {
   @override
   String get buildDeployDescription =>
       'সহজে একাধিক প্ল্যাটফর্মে আপনার অ্যাপ ডেপ্লয় করুন।';
-
-  @override
-  String get english => 'English';
-
-  @override
-  String get bangla => 'বাংলা';
-
-  @override
-  String get arabic => 'العربية';
 
   @override
   String passwordMinLengthValidation(String minLength) {
