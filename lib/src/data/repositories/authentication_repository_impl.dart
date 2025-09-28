@@ -25,7 +25,7 @@ final class AuthenticationRepositoryImpl extends AuthenticationRepository {
   ) async {
     return asyncGuard(() async {
       final model = LoginRequestModel.fromEntity(data);
-      final response = await remote.login(model);
+      final response = await remote.login(model.toJson());
 
       // Save the session if the user has selected the "Remember Me" option
       if (data.shouldRemeber ?? false) await _saveSession();
