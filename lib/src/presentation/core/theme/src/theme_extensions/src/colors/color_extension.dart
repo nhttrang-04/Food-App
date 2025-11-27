@@ -43,7 +43,7 @@ class LightColorExtension extends ThemeExtension<LightColorExtension>
     implements ColorExtension {
   const LightColorExtension({
     this.border = _Primitive.neutral20,
-    this.icon = _Primitive.neutral0,
+    this.icon = _Primitive.neutral40,
     this.onPrimary = _Primitive.neutral0,
     this.primary = _Primitive.brand,
     this.scaffoldBackground = _Primitive.neutral10,

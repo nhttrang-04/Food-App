@@ -81,59 +81,43 @@ class _LoginPageState extends ConsumerState<LoginPage> {
 
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          children: [
-            Align(
-              alignment: Directionality.of(context) == TextDirection.ltr
-                  ? Alignment.topRight
-                  : Alignment.topLeft,
-              child: const Padding(
-                padding: EdgeInsets.all(16.0),
-                child: LanguageSwitcherWidget(),
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: Column(
+            children: [
+              Align(
+                alignment: Directionality.of(context) == TextDirection.ltr
+                    ? Alignment.topRight
+                    : Alignment.topLeft,
+                child: const LanguageSwitcherWidget(),
               ),
-            ),
-            Expanded(
-              child: SingleChildScrollView(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  child: ConstrainedBox(
-                    constraints: BoxConstraints(
-                      minHeight: MediaQuery.of(context).size.height - 200,
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const FlutterLogo(size: 200),
-                        const SizedBox(height: 80),
-                        Form(
-                          key: _formKey,
-                          child: _LoginForm(
-                            emailController: emailController,
-                            passwordController: passwordController,
-                            shouldRemember: shouldRemember,
-                          ),
-                        ),
-                        const SizedBox(height: 32),
-                        FilledButton(
-                          onPressed: state.status.isLoading ? null : _onLogin,
-                          child: state.status.isLoading
-                              ? const LoadingIndicator()
-                              : Text(context.locale.login),
-                        ),
-                        LinkText(
-                          text: context.locale.dontHaveAccount,
-                          linkText: context.locale.signUp,
-                          onTap: () {
-                            context.pushNamed(Routes.registration);
-                          },
-                        ),
-                      ],
-                    ),
-                  ),
+              const SizedBox(height: 16),
+              const FlutterLogo(size: 200),
+              const SizedBox(height: 80),
+              Form(
+                key: _formKey,
+                child: _LoginForm(
+                  emailController: emailController,
+                  passwordController: passwordController,
+                  shouldRemember: shouldRemember,
                 ),
               ),
-            ),
-          ],
+              const SizedBox(height: 32),
+              FilledButton(
+                onPressed: state.status.isLoading ? null : _onLogin,
+                child: state.status.isLoading
+                    ? const LoadingIndicator()
+                    : Text(context.locale.login),
+              ),
+              LinkText(
+                text: context.locale.dontHaveAccount,
+                linkText: context.locale.signUp,
+                onTap: () {
+                  context.pushNamed(Routes.registration);
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
