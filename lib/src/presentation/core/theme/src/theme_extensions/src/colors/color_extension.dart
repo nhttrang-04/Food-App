@@ -46,7 +46,7 @@ class LightColorExtension extends ThemeExtension<LightColorExtension>
     this.icon = _Primitive.neutral40,
     this.onPrimary = _Primitive.neutral0,
     this.primary = _Primitive.brand,
-    this.scaffoldBackground = _Primitive.neutral10,
+    this.scaffoldBackground = _Primitive.neutral0,
     this.success = _Primitive.success,
     this.error = _Primitive.error,
     this.warning = _Primitive.warning,

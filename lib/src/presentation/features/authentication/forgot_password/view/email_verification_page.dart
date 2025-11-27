@@ -12,47 +12,37 @@ class EmailVerificationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: Text(context.locale.checkYourMail)),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Column(
               children: [
-                ConstrainedBox(
-                  constraints: BoxConstraints(
-                    minHeight: MediaQuery.sizeOf(context).height * .80,
+                const SizedBox(height: 24),
+                const FlutterLogo(size: 200),
+                const SizedBox(height: 24),
+                Text(
+                  context.locale.checkYourMail,
+                  style: context.textStyle.headlineSmall.copyWith(fontSize: 24),
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  context.locale.enterVerificationCode,
+                  textAlign: TextAlign.center,
+                  style: context.textStyle.bodyMedium.copyWith(
+                    fontWeight: FontWeight.w500,
+                    color: context.color.text.secondary,
                   ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const FlutterLogo(size: 300),
-                      const SizedBox(height: 24),
-                      Text(
-                        context.locale.checkYourMail,
-                        style: context.textStyle.headlineSmall.copyWith(
-                          fontSize: 24,
-                        ),
-                      ),
-                      const SizedBox(height: 8),
-                      Text(
-                        context.locale.enterVerificationCode,
-                        textAlign: TextAlign.center,
-                        style: context.textStyle.bodyMedium.copyWith(
-                          fontWeight: FontWeight.w500,
-                          color: context.color.text.secondary,
-                        ),
-                      ),
-                      const SizedBox(height: 32),
-                      const _OTPField(),
-                      LinkText(
-                        text: context.locale.didntGetCode,
-                        linkText: context.locale.clickToResend,
-                        onTap: () {
-                          //TODO: Implement this
-                        },
-                      ),
-                    ],
-                  ),
+                ),
+                const SizedBox(height: 32),
+                const _OTPField(),
+                LinkText(
+                  text: context.locale.didntGetCode,
+                  linkText: context.locale.clickToResend,
+                  onTap: () {
+                    //TODO: Implement this
+                  },
                 ),
                 LinkText(
                   text: context.locale.didNotReceiveEmail,

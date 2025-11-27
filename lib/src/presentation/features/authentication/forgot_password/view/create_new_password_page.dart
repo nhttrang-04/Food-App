@@ -15,37 +15,32 @@ class CreateNewPasswordPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: ConstrainedBox(
-            constraints: BoxConstraints(
-              minHeight: MediaQuery.of(context).size.height - 100,
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SizedBox(height: 24),
-                Text(
-                  context.locale.createNewPassword,
-                  style: context.textStyle.headlineSmall.copyWith(fontSize: 24),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(height: 16),
+              Text(
+                context.locale.createNewPassword,
+                style: context.textStyle.headlineSmall.copyWith(fontSize: 24),
+              ),
+              const SizedBox(height: 4),
+              Text(
+                context.locale.createNewPasswordHint,
+                style: context.textStyle.bodyMedium.copyWith(
+                  fontWeight: FontWeight.w500,
+                  color: context.color.text.secondary,
                 ),
-                const SizedBox(height: 4),
-                Text(
-                  context.locale.createNewPasswordHint,
-                  style: context.textStyle.bodyMedium.copyWith(
-                    fontWeight: FontWeight.w500,
-                    color: context.color.text.secondary,
-                  ),
-                ),
-                const SizedBox(height: 32),
-                const _Form(),
-                const SizedBox(height: 32),
-                FilledButton(
-                  onPressed: () {
-                    context.pushReplacementNamed(Routes.resetPasswordSuccess);
-                  },
-                  child: Text(context.locale.resetPassword),
-                ),
-              ],
-            ),
+              ),
+              const SizedBox(height: 32),
+              const _Form(),
+              const SizedBox(height: 32),
+              FilledButton(
+                onPressed: () {
+                  context.pushReplacementNamed(Routes.resetPasswordSuccess);
+                },
+                child: Text(context.locale.resetPassword),
+              ),
+            ],
           ),
         ),
       ),
