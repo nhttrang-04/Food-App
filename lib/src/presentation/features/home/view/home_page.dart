@@ -19,7 +19,14 @@ class _HomePageState extends ConsumerState<HomePage> {
   void initState() {
     super.initState();
     ref.listenManual(logoutProvider, (previous, next) {
-      if (next.isSuccess) context.pushReplacementNamed(Routes.login);
+      switch (next) {
+        case AsyncData(:final value) when value == true:
+          context.pushReplacementNamed(Routes.login);
+        case AsyncError(:final error):
+          ScaffoldMessenger.of(
+            context,
+          ).showSnackBar(SnackBar(content: Text(error.toString())));
+      }
     });
   }
 

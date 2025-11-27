@@ -39,26 +39,6 @@ final class LoginUseCase {
   }
 }
 
-final class CheckRememberMeUseCase {
-  CheckRememberMeUseCase(this.repository);
-
-  final AuthenticationRepository repository;
-
-  Future<bool> call() async {
-    return repository.rememberMe();
-  }
-}
-
-final class SaveRememberMeUseCase {
-  SaveRememberMeUseCase(this.repository);
-
-  final AuthenticationRepository repository;
-
-  Future<bool> call(bool rememberMe) async {
-    return repository.rememberMe(rememberMe: rememberMe);
-  }
-}
-
 final class LogoutUseCase {
   LogoutUseCase(this.repository);
 

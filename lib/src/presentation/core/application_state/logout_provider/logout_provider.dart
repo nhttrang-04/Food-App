@@ -1,19 +1,20 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../../../core/di/dependency_injection.dart';
-import 'logout_state.dart';
 
 part 'logout_provider.g.dart';
 
 @Riverpod(keepAlive: true)
 class Logout extends _$Logout {
   @override
-  LogoutState build() {
-    return const LogoutState();
+  AsyncValue<bool?> build() {
+    return const AsyncValue.data(null);
   }
 
   Future<void> call() async {
-    state = const LogoutState(type: Status.loading);
+    if (state.isLoading) return;
+
+    state = const AsyncValue.loading();
 
     // Intentional simulated delay to show loading indicator
     await Future.delayed(const Duration(seconds: 1));
@@ -23,9 +24,9 @@ class Logout extends _$Logout {
       // Invalidate all repository providers to remove cached data
       ref.read(resetRepositoryUseCaseProvider).call(ref);
 
-      state = const LogoutState(type: Status.success);
+      state = const AsyncValue.data(true);
     } catch (e) {
-      state = LogoutState(type: Status.error, error: e.toString());
+      state = AsyncValue.error(e, StackTrace.current);
     }
   }
 }
