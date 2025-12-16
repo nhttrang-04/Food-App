@@ -15,7 +15,7 @@ import '../../features/home/view/home_page.dart';
 import '../../features/onboarding/view/onboarding_page.dart';
 import '../../features/profile/view/profile_page.dart';
 import '../../features/splash/view/splash_page.dart';
-import '../widgets/app_startup/startup_widget.dart';
+import '../widgets/app_startup/view/startup_widget.dart';
 import '../widgets/navigation_shell.dart';
 import 'router_state/router_state_provider.dart';
 import 'routes.dart';
@@ -37,7 +37,6 @@ GoRouter goRouter(Ref ref) {
     redirect: (context, state) {
       Log.info('Redirecting to ${state.uri}');
       if ([
-        Routes.initial,
         Routes.onboarding,
         Routes.splash,
       ].contains(state.uri.path)) {
@@ -50,11 +49,8 @@ GoRouter goRouter(Ref ref) {
         path: Routes.initial,
         name: Routes.initial,
         pageBuilder: (context, state) {
-          return const NoTransitionPage(
-            child: AppStartupWidget(
-              loading: SplashPage(),
-              loaded: SplashPage(),
-            ),
+          return const MaterialPage(
+            child: AppStartup()
           );
         },
       ),
